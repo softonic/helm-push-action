@@ -31,7 +31,7 @@ elif [ "$FORCE" == "1" ] || [ "$FORCE" == "True" ] || [ "$FORCE" == "TRUE" ]; th
   FORCE="-f"
 fi
 
-
+helm repo add softonic $CHARTMUSEUM_URL --username $CHARTMUSEUM_USER --password $CHARTMUSEUM_PASSWORD
 
 cd ${SOURCE_DIR}/${CHART_FOLDER}
 
@@ -43,4 +43,4 @@ helm dependency update .
 
 helm package .
 
-helm push . ${CHARTMUSEUM_URL} -u ${CHARTMUSEUM_USER} -p ${CHARTMUSEUM_PASSWORD} ${FORCE}
+helm cm-push . ${CHARTMUSEUM_URL} -u ${CHARTMUSEUM_USER} -p ${CHARTMUSEUM_PASSWORD} ${FORCE}
