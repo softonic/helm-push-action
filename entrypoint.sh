@@ -33,7 +33,7 @@ fi
 
 helm repo add softonic $CHARTMUSEUM_URL --username $CHARTMUSEUM_USER --password $CHARTMUSEUM_PASSWORD
 
-cd ${SOURCE_DIR}/${CHART_FOLDER}
+cd ${CHART_FOLDER}
 
 helm version -c
 
